@@ -278,7 +278,11 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: 1102903304451054828}
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Position: {x: 624, y: 252, z: 0}
+=======
+    m_Position: {x: 348, y: 336, z: 0}
+>>>>>>> parent of 885f4c1... playing with zombie1
 =======
     m_Position: {x: 348, y: 336, z: 0}
 >>>>>>> parent of 885f4c1... playing with zombie1

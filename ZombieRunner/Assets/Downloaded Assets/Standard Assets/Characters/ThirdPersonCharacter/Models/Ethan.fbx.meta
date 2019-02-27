@@ -358,6 +358,7 @@ ModelImporter:
     13700006: EthanGlasses
     13700008: EthanBody1
 <<<<<<< HEAD
+<<<<<<< HEAD
     2186277476908879412: ImportLogs
   externalObjects:
   - first:
@@ -365,6 +366,8 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: EthanWhite
     second: {fileID: 2100000, guid: f62b52b2d4b721742a0bc5c6b4db468d, type: 2}
+=======
+>>>>>>> parent of 885f4c1... playing with zombie1
 =======
 >>>>>>> parent of 885f4c1... playing with zombie1
   materials:
@@ -378,9 +381,12 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
 <<<<<<< HEAD
+<<<<<<< HEAD
     rigImportErrors: "Avatar creation failed:\n\tTransform 'Bip01 Pelvis' for human
       bone 'Hips' not found\n"
     rigImportWarnings: 
+=======
+>>>>>>> parent of 885f4c1... playing with zombie1
 =======
 >>>>>>> parent of 885f4c1... playing with zombie1
     animationImportErrors: 
@@ -1083,6 +1089,9 @@ ModelImporter:
       parentName: EthanRightHandPinky2
       position: {x: -0.015650306, y: 0.004325165, z: -0.010911368}
       rotation: {x: 0.04428908, y: -0.00024435105, z: -0.18078858, w: 0.9825242}
+<<<<<<< HEAD
+>>>>>>> parent of 885f4c1... playing with zombie1
+=======
 >>>>>>> parent of 885f4c1... playing with zombie1
       scale: {x: 1, y: 1, z: 1}
     - name: L Spine
