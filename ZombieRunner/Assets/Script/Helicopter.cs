@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Helicopter : MonoBehaviour {
 
-    [SerializeField] AudioClip callSound;
-
     private bool called = false;
-    private AudioSource audioSource;
 
 	// Use this for initialization
 	void Start () {
-        audioSource = GetComponent<AudioSource>();
-        Debug.Log("helicopter script started;");
+		
 	}
 	
 	// Update is called once per frame
@@ -26,9 +22,6 @@ public class Helicopter : MonoBehaviour {
 	}
 
     private void PlayHeliSound() {
-        //HelicopterCalling.
         Debug.Log("Helicopter called");
-        audioSource.spatialBlend = 0;
-        audioSource.clip = callSound;
     }
 }
