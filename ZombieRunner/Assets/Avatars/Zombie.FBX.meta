@@ -339,11 +339,11 @@ ModelImporter:
     - boneName: Bip01 L Clavicle
       humanName: LeftShoulder
       limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
+        min: {x: 0, y: -15, z: 0}
+        max: {x: 0, y: 15, z: 87.404655}
         value: {x: 0, y: 0, z: 0}
         length: 0
-        modified: 0
+        modified: 1
     - boneName: Bip01 L UpperArm
       humanName: LeftUpperArm
       limit:
