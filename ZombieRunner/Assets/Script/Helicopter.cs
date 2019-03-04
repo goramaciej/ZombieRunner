@@ -8,27 +8,41 @@ public class Helicopter : MonoBehaviour {
 
     private bool called = false;
     private AudioSource audioSource;
+    private Rigidbody rb;
 
 	// Use this for initialization
 	void Start () {
         audioSource = GetComponent<AudioSource>();
-        Debug.Log("helicopter script started;");
+        rb = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetButtonDown("CallHelicopter")) {
-            if (!called) {
-                called = true; 
-                PlayHeliSound();
-            }           
+            // key "h"
+            CallHeli();
         }
 	}
 
-    private void PlayHeliSound() {
+    public void CallHeli() {
         //HelicopterCalling.
-        Debug.Log("Helicopter called");
-        audioSource.spatialBlend = 0;
-        audioSource.clip = callSound;
+
+        if (!called) {
+            called = true;
+            audioSource.spatialBlend = 0;
+            audioSource.clip = callSound;
+            audioSource.Play();
+
+            if (rb) {
+                rb.velocity = new Vector3(0, 0, 50f);
+            } else {
+                Debug.LogError("Rigidbody on helicopter not found");
+            }
+            
+        }
+    }
+
+    private void PlayHeliSound() {
+        
     }
 }

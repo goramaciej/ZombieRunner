@@ -30,5 +30,9 @@ public class Player : MonoBehaviour {
         }
     }
 
+    void OnFindClearArea() {
+        Debug.Log("Found clear area in player");
+    }
+
 
 }
