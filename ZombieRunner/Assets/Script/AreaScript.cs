@@ -16,7 +16,7 @@ public class AreaScript : MonoBehaviour
     {
         timeSinceLastTrigger += Time.deltaTime;
         if (timeSinceLastTrigger > 1f) {
-            SendMessageUpwards
+            SendMessageUpwards("OnFindClearArea");
 
         }
     }
