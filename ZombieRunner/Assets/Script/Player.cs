@@ -5,15 +5,11 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     [SerializeField] bool respawnNow;
-    [SerializeField] Helicopter helicopter;
-
-    [Tooltip("dupa")] public AudioClip whatHappenedAudioClip;
+    //[SerializeField] Helicopter helicopter;
 
     //List<SpawnPoint> spawnPoints;
     private SpawnPoint[] mySpawnPoints;
     private SpawnPoint currentSpawnPoint;
-
-    private AudioSource innerVoice;
 
     private void Start() {
         mySpawnPoints = FindObjectsOfType<SpawnPoint>();
@@ -21,7 +17,7 @@ public class Player : MonoBehaviour {
         /// private Transform[] spawnPoints;
         /// spawn points = playerSpawnPoints.GetComponentsInChildren<Transform>();
 
-        PlayWhatHappenedAudioClip();
+        //PlayWhatHappenedAudioClip();
     }
 
     private void ReSpawn() {
@@ -39,13 +35,15 @@ public class Player : MonoBehaviour {
     }
 
     void OnFindClearArea() {
-        if (helicopter) {
+        /*if (helicopter) {
             //helicopter.CallHeli();
         } else {
             Debug.LogError("Helicopter not specified in Player");
-        }
+        }*/
     }
-    private void PlayWhatHappenedAudioClip() {
+
+
+    /*private void PlayWhatHappenedAudioClip() {
         // get AudioSource with priority 1;
         AudioSource[] audioSources = GetComponents<AudioSource>();
         foreach(AudioSource audioS in audioSources) {
@@ -58,7 +56,7 @@ public class Player : MonoBehaviour {
             innerVoice.clip = whatHappenedAudioClip;
             innerVoice.Play();
         }
-    }
+    }*/
 
 
 }

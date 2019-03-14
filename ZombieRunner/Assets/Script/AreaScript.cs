@@ -5,23 +5,20 @@ using UnityEngine;
 public class AreaScript : MonoBehaviour
 {
     private float timeSinceLastTrigger = 0f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool foundClearArea = false;
 
-    // Update is called once per frame
     void Update()
     {
         timeSinceLastTrigger += Time.deltaTime;
-        if (timeSinceLastTrigger > 1f) {
+        if (timeSinceLastTrigger > 1f && Time.realtimeSinceStartup > 10f && !foundClearArea) {
             SendMessageUpwards("OnFindClearArea");
-
+            foundClearArea = true;
         }
     }
 
     private void OnTriggerStay(Collider other) {
-        timeSinceLastTrigger = 0f;
+        if(other.tag != "Player") {
+            timeSinceLastTrigger = 0f;
+        }
     }
 }

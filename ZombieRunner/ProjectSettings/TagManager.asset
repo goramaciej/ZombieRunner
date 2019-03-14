@@ -6,6 +6,7 @@ TagManager:
   tags:
   - NavMeshEnvironment
   - MeshFloor
+  - Enemy
   layers:
   - Default
   - TransparentFX
