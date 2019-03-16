@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DayLightManager : MonoBehaviour {
 
-    [Tooltip("Number of minutes per second")][SerializeField] float minutesPerSecond = 200;
+    [Tooltip("Number of minutes per second")][SerializeField] float minutesPerSecond = 300;
 	
 	// Update is called once per frame
 	void Update () {

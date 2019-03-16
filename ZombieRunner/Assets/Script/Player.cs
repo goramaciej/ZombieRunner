@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+
+    // Description - player can run arround whole map, when he find place where helicopter can land he presses "h" on keyboard to call it.
+
     [SerializeField] bool respawnNow;
+    [SerializeField] GameObject LandingAreaPrefab;
     //[SerializeField] Helicopter helicopter;
 
     //List<SpawnPoint> spawnPoints;
     private SpawnPoint[] mySpawnPoints;
     private SpawnPoint currentSpawnPoint;
+    private bool helicopterCalled = false;
 
     private void Start() {
         mySpawnPoints = FindObjectsOfType<SpawnPoint>();
@@ -22,7 +27,7 @@ public class Player : MonoBehaviour {
 
     private void ReSpawn() {
         int mRan = Random.Range(0, mySpawnPoints.Length);
-        Debug.Log(mRan);
+        //Debug.Log(mRan);
         currentSpawnPoint = mySpawnPoints[mRan];
         transform.position = currentSpawnPoint.transform.position;
     }
@@ -32,6 +37,36 @@ public class Player : MonoBehaviour {
             ReSpawn();
             respawnNow = false;
         }
+
+        if (Input.GetButtonDown("CallHelicopter"))
+        {
+            // key "h"
+            //OnDispatchHelicopter();
+            CallHelicopter();
+
+            
+        }
+    }
+
+    private void CallHelicopter()
+    {
+        if (!helicopterCalled)
+        {
+            helicopterCalled = true;
+            DropFlare();
+            //OnDispatchHelicopter();
+            Helicopter heli = FindObjectOfType<Helicopter>();
+            heli.OnDispatchHelicopter();
+        }
+    }
+
+
+    private bool CheckArea()
+    {
+        return true;
+        //isCollide
+        //AreaScript myArea = FindObjectOfType<AreaScript>();
+        //return myArea.CheckCollision();
     }
 
     void OnFindClearArea() {
@@ -40,6 +75,12 @@ public class Player : MonoBehaviour {
         } else {
             Debug.LogError("Helicopter not specified in Player");
         }*/
+    }
+
+    private void DropFlare()
+    {
+        Debug.Log("DropFlare");
+        Instantiate(LandingAreaPrefab, transform.position, transform.rotation);
     }
 
 
