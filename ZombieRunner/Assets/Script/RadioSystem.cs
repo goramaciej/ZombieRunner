@@ -14,19 +14,21 @@ public class RadioSystem : MonoBehaviour {
     }
 
     public void PlaySound(string audioClipName) {
-        Debug.Log("RadioSystem playSound: " + audioClipName);
+        //Debug.Log("RadioSystem playSound: " + audioClipName);
     }
 
     public void OnMakeInitialHeliCall() {
-        Debug.Log(name + " OnMakeInitialHeliCall");
+        /*Debug.Log(name + " OnMakeInitialHeliCall");
         mAs.clip = initialHeliCall;
         mAs.Play();
         Invoke("InitialReply", initialHeliCall.length + 1f);
+        */
     }
 
     void InitialReply() {
-        mAs.clip = initialCallReply;
+        /*mAs.clip = initialCallReply;
         mAs.Play();
         BroadcastMessage("OnDispatchHelicopter");
+        */
     }
 }
