@@ -9,6 +9,7 @@ public class Player : MonoBehaviour {
 
     [SerializeField] bool respawnNow;
     [SerializeField] GameObject LandingAreaPrefab;
+    [SerializeField] AudioClip shootSound;
     //[SerializeField] Helicopter helicopter;
 
     //List<SpawnPoint> spawnPoints;
@@ -38,15 +39,28 @@ public class Player : MonoBehaviour {
             respawnNow = false;
         }
 
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Shot();
+        }
+
         if (Input.GetButtonDown("CallHelicopter"))
         {
             // key "h"
             //OnDispatchHelicopter();
-            CallHelicopter();
-
-            
+            CallHelicopter();            
         }
     }
+
+    private void Shot()
+    {
+        ShootSound();
+        Animator myAnim = GetComponentInChildren<Animator>();
+        myAnim.SetTrigger("Recoil");
+        BroadcastMessage("ExecuteShot");
+        Debug.Log("shot! "+myAnim);
+    }
+
 
     private void CallHelicopter()
     {
@@ -81,6 +95,13 @@ public class Player : MonoBehaviour {
     {
         Debug.Log("DropFlare");
         Instantiate(LandingAreaPrefab, transform.position, transform.rotation);
+    }
+
+    private void ShootSound()
+    {
+        AudioSource m_audioSource = GetComponent<AudioSource>();
+        m_audioSource.clip = shootSound;
+        m_audioSource.Play();
     }
 
 
