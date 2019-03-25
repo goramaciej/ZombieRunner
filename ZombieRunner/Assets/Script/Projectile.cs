@@ -13,6 +13,16 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("bullet collision: " + collision.gameObject.tag);
+        //Debug.Log("bullet collision: " + collision.gameObject.tag);
+        
+        if (collision.gameObject.tag == "Enemy")
+        {
+            if (collision.gameObject.GetComponent<ZombieScript>())
+            {
+                ZombieScript zombie = collision.gameObject.GetComponent<ZombieScript>();
+                zombie.Die();
+            }
+        }
+        Destroy(gameObject);
     }
 }

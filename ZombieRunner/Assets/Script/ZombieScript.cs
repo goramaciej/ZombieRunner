@@ -12,6 +12,11 @@ public class ZombieScript : MonoBehaviour
         myAnimator = GetComponent<Animator>();
     }
 
+    public void Die()
+    {
+        Debug.Log("Zombie dying");
+    }
+
 
     private void OnCollisionStay(Collision collision)
     {
@@ -27,12 +32,11 @@ public class ZombieScript : MonoBehaviour
         }
 
     }
-
-
-    private void OnTriggerStay(Collider other)
+    private void OnCollisionExit(Collision collision)
     {
-        //Debug.Log("Zombie has trigger: " + other.tag);
+        Debug.Log("collisionExit!!!");
     }
+
 
     private void Update()
     {
